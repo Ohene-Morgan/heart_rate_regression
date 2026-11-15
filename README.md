@@ -2,6 +2,10 @@
 
 Estimates heart rate (BPM) from PPG scalogram "images" using a Vision Transformer (ViT), by fine-tuning Google's pretrained `vit-base-patch16-224` on 4-channel input instead of the usual 3-channel RGB.
 
+## Dataset
+
+The 15 subjects (S1 to S15) and the 64,697 windows in total (44,617 train, 9,016 validation, 11,064 test) correspond to **PPG-DaLiA** (Reiss et al., 2019; [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/495/ppg+DaLiA), CC BY 4.0), recorded with a wrist-worn Empatica E4 and a chest-worn ECG reference during daily activities. Heart-rate labels are the ECG-derived average per 8-second window. The dataset is not redistributed here; download it from UCI and preprocess it into the `{subject}_X.npy` / `{subject}_y.npy` format described below.
+
 ## How it works
 
 - **Data**: Each sample is a 4-channel scalogram window (time-frequency representation of a PPG signal) paired with a ground-truth heart rate label, stored per-subject as `{subject}_X.npy` / `{subject}_y.npy`. `ScalogramDataset` (`src/data/dataset.py`) memory-maps these arrays so only the needed window is loaded into RAM per sample.
