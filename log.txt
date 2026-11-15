@@ -1,4 +1,4 @@
-(sroda_vit) caleb@cmorg24:~/research/heart_rate_regression$ python3 train.py --data_dir processed_NP
+$ python3 train.py --data_dir processed_NP
 Using device: cuda
 Dataset initialized with subjects ['S1', 'S2', 'S4', 'S7', 'S8', 'S9', 'S10', 'S11', 'S12', 'S13']
 Total windows: 44617
@@ -345,4 +345,3 @@ Train MAE: 5.60 BPM
 Validation MAE: 15.27 BPM
 Test MAE: 8.17 BPM
 Loss plot saved to ./checkpoints/loss_plot.png
-(sroda_vit) caleb@cmorg24:~/research/heart_rate_regression$
