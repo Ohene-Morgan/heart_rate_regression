@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*:Zone.Identifier
+
+# Large model checkpoints and processed datasets - too large for git
+checkpoints/*.pth
+processed_NP/*.npy
